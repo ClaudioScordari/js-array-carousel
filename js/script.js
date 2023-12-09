@@ -22,7 +22,13 @@ let currentIndex = 0;
 const boxImages = document.querySelector('.container-img');
 
 // Immagine
-const imgElement = document.getElementById('imgX');
+const imgElement = document.createElement('img');
+
+// Immagine nel container
+boxImages.append(imgElement);
+
+// Classe img-fluid
+imgElement.classList.add('img-fluid');
 
 // Img al caricamento della pagina
 imgElement.src = images[currentIndex];
@@ -48,7 +54,7 @@ up.addEventListener('click', function () {
 down.addEventListener('click', function () {
 
     // - Se l'immagina non è la prima, torna all'img precedente
-    // - fammi vedere l'ultima
+    // - Fammi vedere l'ultima
 
     if (currentIndex == 0) {
         currentIndex = images.length - 1;
@@ -58,23 +64,3 @@ down.addEventListener('click', function () {
 
     imgElement.src = images[currentIndex];
 })
-
-
-
-
-
-
-
-
-
-// // Immagine
-// const imgElement = document.createElement('img');
-
-// // Classe img-fluid all'img
-// imgElement.classList.add('img-fluid');
-
-// // Img al caricamento della pagina
-// imgElement.src = images[currentIndex];
-
-// // Img dentro il container
-// boxImages.append(imgElement);
