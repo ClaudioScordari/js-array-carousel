@@ -22,30 +22,21 @@
 
         <!-- MAIN -->
         <main>
-
-            <!-- 
-                MILESTONE 1 
-             
-                Per prima cosa, creiamo il markup statico: costruiamo il container
-                e inseriamo un'immagine grande al centro:
-                avremo così la struttura base e gli stili pronti per poterci
-                poi concentrare solamente sull'aspetto logico.
-             -->
-
             <div class="my-container">
 
                 <div class="container-img w-100 position-relative">
-                    <div class="p-1 position-absolute z-1 change-up">
-                        <i class="fs-1 fa-solid fa-angle-up" style="color: #000000;"></i>
+                    <div>
+                        <a class="p-1 position-absolute z-1 change-up">
+                            <i class="fs-1 fa-solid fa-angle-up h-100" style="color: #000000;"></i>
+                        </a>
                     </div>
-                    <div class="p-1 position-absolute z-1 change-down">
-                        <i class="fs-1 fa-solid fa-angle-down" style="color: #000000;"></i>
+                    <div>
+                        <a class="p-1 position-absolute z-1 change-down">
+                            <i class="fs-1 fa-solid fa-angle-down h-100" style="color: #000000;"></i>
+                        </a>
                     </div>
 
-                    <!-- 
-                        IMMAGINE TOLTA
-                        <img class="img-fluid" src="img/01.webp" alt="">
-                    -->
+                    <img class="img-fluid" id="imgX">
                 </div>
 
             </div>
