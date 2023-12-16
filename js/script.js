@@ -34,13 +34,30 @@ imgElement.classList.add('img-fluid');
 imgElement.src = images[currentIndex];
 
 // Mi assegno l'intervallo in una variabile
-const clock = setInterval(changeImg, 1000);
+let clock = setInterval(changeImg, 2000);
+
+// Mi seleziono il mio bottone
+const myButton = document.querySelector('button');
+
+// Funzione al bottone
+myButton.addEventListener('click', function () {
+
+    // Se l'intervallo non è attivo (è diverso da null), interrompi l'intervallo...
+    if (clock != null) {
+        clearInterval(clock);
+        clock = null;
+
+        // ... altrimenti fai partire l'intervallo
+    } else {
+        clock = setInterval(changeImg, 1000);
+    }
+});
 
 // Funzione
 function changeImg() {
     /*
        Se l'indice attivo è minore di array.lenght allora indice++,
-       altrimenti se l'indice è == a array.lenght
+       altrimenti l'indice è uguale a 0 e riparto
     */
     if (currentIndex < (images.length - 1) /*(questa è l'ultima)*/) {
         currentIndex++;
@@ -49,50 +66,3 @@ function changeImg() {
     }
     imgElement.src = images[currentIndex];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Click
-// up.addEventListener('click', function () {
-
-//     if (currentIndex < images.length) {
-//         currentIndex++;
-//     } else {
-//         currentIndex = 0;
-//     }
-
-//     imgElement.src = images[currentIndex];
-// });
-
-// down.addEventListener('click', function () {
-
-//     // Quando si clicca giù, se l'indice è 0 ritorno all'ultimo indice, altrimenti fai --;
-
-//     if (currentIndex == 0) {
-//         currentIndex = images.length - 1; // l'ultima
-//     } else {
-//         currentIndex--;
-//     }
-
-//     imgElement.src = images[currentIndex];
-// })
