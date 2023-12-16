@@ -33,34 +33,66 @@ imgElement.classList.add('img-fluid');
 // Img al caricamento della pagina
 imgElement.src = images[currentIndex];
 
-// Bottoni
-const down = document.querySelector('.change-down');
-const up = document.querySelector('.change-up');
+// Mi assegno l'intervallo in una variabile
+const clock = setInterval(changeImg, 1000);
 
-/**************************************************/
-
-// Click
-up.addEventListener('click', function () {
-
-    if (currentIndex < images.length) {
+// Funzione
+function changeImg() {
+    /*
+       Se l'indice attivo è minore di array.lenght allora indice++,
+       altrimenti se l'indice è == a array.lenght
+    */
+    if (currentIndex < (images.length - 1) /*(questa è l'ultima)*/) {
         currentIndex++;
     } else {
         currentIndex = 0;
     }
-
     imgElement.src = images[currentIndex];
-});
+}
 
-down.addEventListener('click', function () {
 
-    // - Se l'immagina non è la prima, torna all'img precedente
-    // - Fammi vedere l'ultima
 
-    if (currentIndex == 0) {
-        currentIndex = images.length - 1;
-    } else {
-        currentIndex--;
-    }
 
-    imgElement.src = images[currentIndex];
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Click
+// up.addEventListener('click', function () {
+
+//     if (currentIndex < images.length) {
+//         currentIndex++;
+//     } else {
+//         currentIndex = 0;
+//     }
+
+//     imgElement.src = images[currentIndex];
+// });
+
+// down.addEventListener('click', function () {
+
+//     // Quando si clicca giù, se l'indice è 0 ritorno all'ultimo indice, altrimenti fai --;
+
+//     if (currentIndex == 0) {
+//         currentIndex = images.length - 1; // l'ultima
+//     } else {
+//         currentIndex--;
+//     }
+
+//     imgElement.src = images[currentIndex];
+// })
